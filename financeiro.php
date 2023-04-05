@@ -1,10 +1,11 @@
 <?php
+require_once "menu.php";
 class menu_fin extends financeiro{
 //menu para escolher qual a opção vc deseja ir;
   public function menuEscolha() {
-    echo "Voce acessou o Financeiro";
+    echo "Voce acessou o Financeiro\n";
     echo "Selecione uma das opções abaixo para ir aonde deseja:\n";
-    echo "1 - Para acessar a função de inserir dados\n";
+    echo "1 - Para inserir dados\n";
     echo "2 - Para alterar os dados\n";
     echo "3 - Para excluir os dados\n";
     echo "4 - Para consultar os dados\n";
@@ -48,6 +49,26 @@ class financeiro {
     echo $this->plano . "\n";
     echo $this->vencimento . "\n";
     echo $this->pago . "\n";
+
+    //menu para retornar ao menu inicial ou ao a inicio da função  
+    echo "Agora o que vc deseja fazer?"."\n";
+    echo "1 - voltar para o menu inicial"."\n";
+    echo "2 - Voltar ao inicio desta função"."\n";
+      
+    $opcao = fgets(STDIN);
+      
+     if ($opcao == 1){       
+      $menus = new menu_princ();
+      $menus->getmenu();
+       
+     }
+     elseif($opcao == 2){
+       $financeiros = new menu_fin();
+       $financeiros->menuEscolha();
+     }
+     else{
+       echo "Acho que você errou";
+     }
   }
 
   public function alterarFinanceiro() {
@@ -81,6 +102,26 @@ class financeiro {
         echo "O novo status do pagamento é: " . $this->pago;
       }
     }
+    
+    //menu para retornar ao menu inicial ou ao a inicio da função  
+    echo "Agora o que vc deseja fazer?"."\n";
+    echo "1 - voltar para o menu inicial"."\n";
+    echo "2 - Voltar ao inicio desta função"."\n";
+      
+    $opcao = fgets(STDIN);
+      
+     if ($opcao == 1){       
+      $menus = new menu_princ();
+      $menus->getmenu();
+       
+     }
+     elseif($opcao == 2){
+       $financeiros = new menu_fin();
+       $financeiros->menuEscolha();
+     }
+     else{
+       echo "Acho que você errou";
+     }
   }
   
   public function excluirFinanceiro() {
@@ -121,21 +162,53 @@ class financeiro {
         echo "Seu status de pagamento é : ".$this->pago."\n";
            }
       }
+      
     }
+    
+    //menu para retornar ao menu inicial ou ao a inicio da função  
+    echo "Agora o que vc deseja fazer?"."\n";
+    echo "1 - voltar para o menu inicial"."\n";
+    echo "2 - Voltar ao inicio desta função"."\n";
+      
+    $opcao = fgets(STDIN);
+      
+     if ($opcao == 1){       
+      $menus = new menu_princ();
+      $menus->getmenu();
+     }
+     elseif($opcao == 2){
+       $financeiros = new menu_fin();
+       $financeiros->menuEscolha();
+     }
+     else{
+       echo "Acho que você errou";
+     }
   }
 
   public function pesquisarFinanceio(){
     echo "Seu plano é: " . $this->plano;
     echo "A data de vencimento é: " . $this->vencimento;
     echo "O seu plano está pago? " . $this->pago;
+
+      //menu para retornar ao menu inicial ou ao a inicio da função  
+    echo "Agora o que vc deseja fazer?"."\n";
+    echo "1 - voltar para o menu inicial"."\n";
+    echo "2 - Voltar ao inicio desta função"."\n";
+      
+    $opcao = fgets(STDIN);
+      
+     if ($opcao == 1){       
+      $menus = new menu_princ();
+      $menus->getmenu();
+       
+     }
+     elseif($opcao == 2){
+       $financeiros = new menu_fin();
+       $financeiros->menuEscolha();
+     }
+     else{
+       echo "Acho que você errou";
+     }
   }
 }
-
-/*
-$financeiro = new financeiro();
-$financeiro->inserirFinanceiro();
-$financeiro->alterarFinanceiro();
-$financeiro->excluirFinanceiro();
-$financeiro->pesquisarFinanceiro();
-*/
 

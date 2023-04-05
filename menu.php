@@ -33,6 +33,11 @@ class menu_princ {
       $tecnico = new sup_tecnico();
       $tecnico->inserirsup_tecnico();
     }
+    else {
+      echo "\nEscolha uma opção válida\n";
+      $menus = new menu_princ();
+      $menus->getmenu();
+    }
   }
 }
 

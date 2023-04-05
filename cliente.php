@@ -3,12 +3,16 @@
 require_once "menu.php";
 
 class cliente {
-  protected $nome;
+  public $nome;
+  public $telefone;
 
   public function setNome() {
-    echo "Olá, seja bem vindo!\n"."por favor, insira seu nome: ";
+    echo "Olá, seja bem vindo!\n"."Por favor, insira seu nome: \n";
     $this->nome = fgets(STDIN);
+    echo "Agora digite o telefone: \n";
+    $this->telefone = fgets(STDIN);
   }
+  
   public function escolha() {
     echo "Muito obrigado, $this->nome\n"; 
     echo "Deseja acessar o menu principal [S/N]? ";
@@ -20,5 +24,12 @@ class cliente {
     else {   
       echo "Ok. Atendimento finalizado! Obrigado por entrar em contato.\n";
     }
+  }
+public function teste() {
+    $dados = array(
+      'nome' => $this->nome,
+      'telefone' => $this->telefone
+    );
+    return $dados;
   }
 }

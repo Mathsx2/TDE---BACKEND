@@ -1,4 +1,6 @@
 <?php
+require_once "menu.php";
+
 class Venda {
   private $dtVenda;
   private $cliente;
